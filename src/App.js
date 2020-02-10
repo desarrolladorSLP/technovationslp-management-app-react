@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
-function App() {
+function App () {
   return (
     <div className="App">
       <NavBar></NavBar>
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

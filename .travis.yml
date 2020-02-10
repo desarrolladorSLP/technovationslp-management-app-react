@@ -1,11 +1,13 @@
 language: node_js
 node_js:
-  - "stable"
+  - 'stable'
 cache:
   directories:
     - node_modules
 script:
   - npm test
+  - npm prettier-check
+  - npm lint-check
   - npm run build
 on:
   branch: master
