@@ -30,6 +30,7 @@ function ButtonFirebase(){
         <div>
           <IfFirebaseAuthed>
             {() => {
+              firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken){console.log(idToken)})
               return <div>You are authenticated</div>;
             }}
           </IfFirebaseAuthed>
