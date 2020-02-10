@@ -3,7 +3,7 @@ import * as firebase from "firebase/app"
 import "firebase/auth"
 import {FirebaseAuthProvider,FirebaseAuthConsumer,IfFirebaseAuthed,IfFirebaseAuthedAnd} from "@react-firebase/auth"
 import {config} from "../config.ts"
-
+import axios from 'axios'
 
 function ButtonFirebase(){
     return <FirebaseAuthProvider firebase={firebase} {...config}>
@@ -30,7 +30,20 @@ function ButtonFirebase(){
         <div>
           <IfFirebaseAuthed>
             {() => {
-              firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken){console.log(idToken)})
+              firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken){
+                console.log(idToken)
+
+              })
+              axios.post('http://teckers-backend.herokuapp.com/oauth/token', {
+              grant_type: 'firebase',
+              firebase_token_id: 'Flintstone'
+              })
+              .then(function (response) {
+              console.log(response);
+              })
+              .catch(function (error) {
+              console.log(error);
+              });
               return <div>You are authenticated</div>;
             }}
           </IfFirebaseAuthed>
