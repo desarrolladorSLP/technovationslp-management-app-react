@@ -32,18 +32,30 @@ function ButtonFirebase(){
             {() => {
               firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken){
                 console.log(idToken)
-
+                axios({
+                  method: 'post',
+                  url: 'http://teckers-backend.herokuapp.com/oauth/token',
+                  data: {
+                    grant_type: 'firebase',
+                    firebase_token_id: idToken
+                  }
+                },{
+                  headers: {
+                    "Content-type":"application/x-www-form-urlencoded",
+                  }
+                }, {
+                  auth: {
+                    username: 'iOSApp',
+                    password: '65r3kelv'
+                  }
+                })
+                .then(function (response) {
+                  console.log(response);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
               })
-              axios.post('http://teckers-backend.herokuapp.com/oauth/token', {
-              grant_type: 'firebase',
-              firebase_token_id: 'Flintstone'
-              })
-              .then(function (response) {
-              console.log(response);
-              })
-              .catch(function (error) {
-              console.log(error);
-              });
               return <div>You are authenticated</div>;
             }}
           </IfFirebaseAuthed>
