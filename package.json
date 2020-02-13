@@ -18,9 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier-standard src/*.js public/*.js",
-    "prettier-check": "prettier-standard src/*.js public/*.js --check",
-    "lint-check": "standard src/*.js public/*.js --lint"
+    "prettier":"prettier-standard src/*.js public/*.js",
+    "prettier-check": "prettier-standard src/*.js public/*.js src/components/*/* src/components/* --check",
+    "lint-check": "standard src/*.js public/*.js src/components/*/* src/components/* --lint"
   },
   "eslintConfig": {
     "extends": "react-app"

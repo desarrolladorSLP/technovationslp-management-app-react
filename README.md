@@ -67,3 +67,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## Contributing
+
+This project uses Travis CI. To make sure your pull request pass all the CI tests, before commit your changes ensure your code:
+
+**Lints** 
+`yarn lint-check`
+**Is pretty**
+`yarn prettier-check`
+**passes all the test-cases**
+`yarn test` 
