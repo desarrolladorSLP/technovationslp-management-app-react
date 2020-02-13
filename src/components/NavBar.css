@@ -1,11 +1,14 @@
 nav {    
     background-color:rgb(94, 93, 156);    
     color: #ffffff;    
-    padding: 10px;     
+    padding: 10px; 
+    
 }
 .logo-navbar{
     background-color: lawngreen;
-    width: 250px;
+    width: 500px;
+    height: 100px;
+    display: inline-flex;
 }
 img {
     height: 80px;

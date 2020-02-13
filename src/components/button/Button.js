@@ -24,7 +24,7 @@ function Button (props){
             outline: 'none',
             '&:hover':{
                 cursor:'pointer',
-                backgroundColor: props.color
+                backgroundColor: 'transparent'
             }
             
     
@@ -42,7 +42,7 @@ function Button (props){
                 color:props.color
             },
             '&:hover':{
-                backgroundColor: '#f6f6f6'
+                backgroundColor: 'transparent'
             }
            
 
@@ -56,7 +56,7 @@ function Button (props){
                 color:props.color
             },
             '&:hover':{
-                backgroundColor: '#f6f6f6'
+                backgroundColor: 'transparent'
             }
 
         }
