@@ -1,10 +1,9 @@
 import React from 'react'
-//import './Card.css'
 import Button from '../button/Button'
 import {createUseStyles} from 'react-jss'
 import clsx from 'clsx'
 
-function Card (){
+function Card (props){
 
     const useStyles = createUseStyles({
         Card: {
@@ -64,15 +63,16 @@ function Card (){
 
     return <div className = {classes.Card} >
             <div className = {classes.Header}>
-                <div className = {classes.cardTitle}>Technovation 5</div> 
+                <div className = {classes.cardTitle}>{props.title}</div> 
                 
             </div>
                 
             <div className ={classes.Description}>
-                <div className={classes.cardSubtitle}>Apoyo a personas de cualquier edad a aprender a usar una computadora  </div>
+                <div className={classes.cardSubtitle}>{props.description} </div>
             </div>
             <div className= {classes.owners}>
-                <div className ={classes.ownerText}>Jose Alfredo Granja Jalomo, Susana Gonzalez </div>
+                
+                <div className ={classes.ownerText}>{props.owners.map(owner => owner+ ', ')} </div>
 
                 
             </div>
