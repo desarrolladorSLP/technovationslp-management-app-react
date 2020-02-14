@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from '../assets/logo-10.png'
-import ButtonFirebase from "./ButtonFirebase"
+import logo from '../../assets/logo-10.png'
+import ButtonFirebase from "../ButtonFirebase"
 import'./NavBar.css'
-import Button from './button/Button'
+import Button from '../button/Button'
 
 
 function NavBar(){
