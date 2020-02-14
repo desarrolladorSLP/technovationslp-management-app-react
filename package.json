@@ -3,22 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-firebase/auth": "^0.2.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "clsx": "^1.1.0",
+    "firebase": "^7.8.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-jss": "^10.0.4",
     "react-scripts": "3.3.0",
-    "standard": "^14.3.1"
+    "standard": "^14.3.1",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier":"prettier-standard src/*.js public/*.js",
+    "prettier": "prettier-standard src/*.js public/*.js",
     "prettier-check": "prettier-standard src/*.js public/*.js src/components/*/* src/components/* --check",
     "lint-check": "standard src/*.js public/*.js src/components/*/* src/components/* --lint"
   },
