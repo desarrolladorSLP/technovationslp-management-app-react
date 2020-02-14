@@ -2,7 +2,7 @@ import React from 'react'
 import * as firebase from "firebase/app"
 import "firebase/auth"
 import {FirebaseAuthProvider,FirebaseAuthConsumer,IfFirebaseAuthed,IfFirebaseAuthedAnd} from "@react-firebase/auth"
-import {config} from '../config'
+import {config} from '../../config'
 import axios from 'axios'
 
 function ButtonFirebase(){

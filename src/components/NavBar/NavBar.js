@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../assets/logo-10.png'
-import ButtonFirebase from "../ButtonFirebase"
+import ButtonFirebase from "../ButtonFirebase/ButtonFirebase"
 import'./NavBar.css'
 import Button from '../button/Button'
 
