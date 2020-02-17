@@ -4,18 +4,19 @@ import "firebase/auth"
 import {FirebaseAuthProvider,FirebaseAuthConsumer,IfFirebaseAuthed,IfFirebaseAuthedAnd} from "@react-firebase/auth"
 import {config} from '../../config'
 import axios from 'axios'
+import Button from '../button/Button'
 
 function ButtonFirebase(){
     return <FirebaseAuthProvider firebase={firebase} {...config}>
-            <div><button onClick={ ()=> {const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-            firebase.auth().signInWithPopup(googleAuthProvider)
-        }}>Sign In with google</button>
-        <button
+            <div><Button onClick={ ()=> {const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+            firebase.auth().signInWithPopup(googleAuthProvider) 
+        }} text = "Sign In with google" color="#000000"></Button>
+        <Button
           onClick={() => {
             firebase.auth().signOut();
-          }}>
-          Sign Out
-        </button>
+          }} text="Sign Out" color="#000000">
+          
+        </Button>
     </div>
 
     <FirebaseAuthConsumer>
@@ -45,8 +46,8 @@ function ButtonFirebase(){
                   }
                 }, {
                   auth: {
-                    username: 'iOSApp',
-                    password: '65r3kelv'
+                    username: '',
+                    password: ''
                   }
                 })
                 .then(function (response) {
