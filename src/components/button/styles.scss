@@ -1,0 +1,21 @@
+.button-default {
+  color: black;
+  border: none;
+  height: 36px;
+  display: flex;
+  outline: none;
+  min-width: 64px;
+  align-items: center;
+  padding-left: 16px;
+  border-radius: 4px;
+  padding-right: 16px;
+  justify-content: center;
+  background-color: #000000;
+  &:hover {
+    cursor: pointer;
+    background-color: transparent;
+  }
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+}
