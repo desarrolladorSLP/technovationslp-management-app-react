@@ -2,15 +2,36 @@ nav {
     background-color:rgb(94, 93, 156);    
     color: #ffffff;    
     padding: 10px; 
+    margin: 20px;
+    height: 100px;
     
 }
 .logo-navbar{
-    background-color: lawngreen;
-    width: 500px;
-    height: 100px;
-    display: inline-flex;
+    background-color: rgb(136, 87, 226);
+    padding: 10px;
+    height: 80px;
 }
 img {
-    height: 80px;
-    width: 295px;
+    height: 50px;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(158, 116, 235);
+    height: 70px;
+  }
+  
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
