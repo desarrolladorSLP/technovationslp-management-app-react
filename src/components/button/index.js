@@ -2,12 +2,12 @@ import React from 'react'
 import './styles.scss'
 
 const Button = (props) => {
-    const { onClick, text,color } = props;
+    const { onClick, text} = props;
     const clickHandler = () => {
         onClick()
     }
 
-    return <button className="button-default" style={{color}}
+    return <button className="button-default" 
             onClick={onClick ? clickHandler : null}>
             {text.toUpperCase()}
     </button>

@@ -3,56 +3,11 @@ import * as firebase from "firebase/app"
 import "firebase/auth"
 import { FirebaseAuthProvider, IfFirebaseAuthed, IfFirebaseAuthedAnd } from "@react-firebase/auth"
 import CONFIG from '../../config'
-import axios from 'axios'
 import Button from '../button'
+import { signOut, signInWithPopup, sendToBackendToken, firebaseAuth } from '../../app/services/firebase'
 
-const SIGN_IN_WITH_GOOGLE="Sign In with google"
+const SIGN_IN_WITH_GOOGLE = "Sign In with google"
 const SIGN_OUT = "Sign Out"
-
-const signInWithPopup = () => {
-  const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-  firebase.auth().signInWithPopup(googleAuthProvider)
-}
-
-const signOut = () => {
-  firebase.auth().signOut();
-}
-
-const sendToBackendToken = () => {
-  firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
-    console.log(idToken)
-  })
-}
-
-const firebaseAuth = () => () => {
-  firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
-    console.log(idToken)
-    axios({
-      method: 'post',
-      url: 'https://teckers-backend.herokuapp.com/oauth/token',
-      data: {
-        grant_type: 'firebase',
-        firebase_token_id: idToken
-      }
-    }, {
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded",
-      }
-    }, {
-      auth: {
-        username: 'iOSApp',
-        password: '65r3kelv'
-      }
-    })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      });
-  })
-  console.log("you are authenticated");//return <div>You are authenticated</div>;
-}
 
 function ButtonFirebase() {
   return <FirebaseAuthProvider firebase={firebase} {...CONFIG}>
@@ -73,17 +28,7 @@ function ButtonFirebase() {
         }}
       </IfFirebaseAuthedAnd>
     </div>
-    {/* <FirebaseAuthConsumer>
-          {({ isSignedIn, user, providerId }) => {
-            return (
-              <pre style={{ height: 300, overflow: "auto" }}>
-                {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
-              </pre>
-            );
-          }}
-        </FirebaseAuthConsumer> */}
   </FirebaseAuthProvider>
-
 }
 
 export default ButtonFirebase
