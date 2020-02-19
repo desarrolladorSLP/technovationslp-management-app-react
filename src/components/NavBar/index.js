@@ -4,7 +4,6 @@ import ButtonFirebase from "../ButtonFirebase"
 import './NavBar.scss'
 import Button from '../button'
 
-
 function NavBar() {
 
     return <nav className="navbar-container">

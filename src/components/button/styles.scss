@@ -1,5 +1,5 @@
 .button-default {
-  color: black;
+  color: rgb(255, 255, 255);
   border: none;
   height: 36px;
   display: flex;
@@ -10,12 +10,11 @@
   border-radius: 4px;
   padding-right: 16px;
   justify-content: center;
-  background-color: #000000;
+  background-color: rgb(94, 93, 156);
+  font-size: 14px;
+  font-family: inherit;
   &:hover {
     cursor: pointer;
-    background-color: transparent;
+    background-color: rgb(130, 129, 180);
   }
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: 500;
 }

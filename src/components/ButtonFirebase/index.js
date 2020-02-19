@@ -24,6 +24,36 @@ const sendToBackendToken = () => {
   })
 }
 
+const firebaseAuth = () => () => {
+  firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+    console.log(idToken)
+    axios({
+      method: 'post',
+      url: 'https://teckers-backend.herokuapp.com/oauth/token',
+      data: {
+        grant_type: 'firebase',
+        firebase_token_id: idToken
+      }
+    }, {
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded",
+      }
+    }, {
+      auth: {
+        username: 'iOSApp',
+        password: '65r3kelv'
+      }
+    })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      });
+  })
+  console.log("you are authenticated");//return <div>You are authenticated</div>;
+}
+
 function ButtonFirebase() {
   return <FirebaseAuthProvider firebase={firebase} {...CONFIG}>
     <Button onClick={signInWithPopup} text={SIGN_IN_WITH_GOOGLE} color="#000000"></Button>
@@ -33,41 +63,13 @@ function ButtonFirebase() {
     </Button>
     <div>
       <IfFirebaseAuthed>
-        {() => {
-          firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
-            console.log(idToken)
-            axios({
-              method: 'post',
-              url: 'https://teckers-backend.herokuapp.com/oauth/token',
-              data: {
-                grant_type: 'firebase',
-                firebase_token_id: idToken
-              }
-            }, {
-              headers: {
-                "Content-type": "application/x-www-form-urlencoded",
-              }
-            }, {
-              auth: {
-                username: 'iOSApp',
-                password: '65r3kelv'
-              }
-            })
-              .then(function (response) {
-                console.log(response)
-              })
-              .catch(function (error) {
-                console.log(error)
-              });
-          })
-          return <div>You are authenticated</div>;
-        }}
+        {firebaseAuth}
       </IfFirebaseAuthed>
       <IfFirebaseAuthedAnd
         filter={({ providerId }) => providerId !== "anonymous"}
       >
         {({ providerId }) => {
-          return <div>You are authenticated with {providerId}</div>;
+          console.log("you are authenticated");//return <div>You are authenticated with {providerId}</div>;
         }}
       </IfFirebaseAuthedAnd>
     </div>

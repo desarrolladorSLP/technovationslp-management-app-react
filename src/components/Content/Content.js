@@ -5,7 +5,7 @@ import'./Content.css'
 
 function Content(){
 
-    return <div><img src={logo} alt="Logo Teckers" ></img></div>
+    return <div ><img src={logo} alt="Logo Teckers" ></img></div>
 
 }
 export default Content
