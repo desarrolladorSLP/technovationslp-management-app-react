@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from '../button/Button'
+import Button from '../button'
 import { createUseStyles } from 'react-jss'
 
 function Card (props) {
