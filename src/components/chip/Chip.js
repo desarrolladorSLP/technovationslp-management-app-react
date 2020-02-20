@@ -2,6 +2,7 @@ import React from 'react'
 import { createUseStyles } from 'react-jss'
 
 function Chip (props) {
+  const { text, onClick } = props
   const useStyles = createUseStyles({
     chip: {
       height: 20,
@@ -27,14 +28,14 @@ function Chip (props) {
   const classes = useStyles()
 
   function clickHandler () {
-    props.onClick()
+    onClick()
   }
   return (
     <div className={classes.chip}>
-      {props.text}
+      {text}
       <div
         className={classes.closeButton + ' material-icons'}
-        onClick={props.onClick ? clickHandler : null}
+        onClick={onClick ? clickHandler : null}
       >
         cancel
       </div>
