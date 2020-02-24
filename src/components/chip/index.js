@@ -28,7 +28,7 @@ function Chip (props) {
   const classes = useStyles()
 
   function clickHandler () {
-    onClick()
+    onClick(text)
   }
   return (
     <div className={classes.chip}>

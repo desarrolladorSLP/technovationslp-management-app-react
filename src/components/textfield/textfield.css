@@ -1,0 +1,26 @@
+.single-line {
+  height: 40px;
+}
+.input {
+  background-color: #ebebeb;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #969696;
+  border-radius: 4px 4px 0px 0px;
+  resize: none;
+}
+.input:hover {
+  border-bottom: 2px solid #686868;
+  background-color: #e2e2e2;
+}
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid #565656;
+  background-color: #d5d5d5;
+}
+.option-list {
+  background-color: magenta;
+}
