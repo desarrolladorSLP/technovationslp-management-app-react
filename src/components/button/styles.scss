@@ -1,0 +1,19 @@
+.button-default {
+  color: rgb(255, 255, 255);
+  border: none;
+  height: 2em;
+  display: flex;
+  //outline: none;
+  min-width: 2em;
+  align-items: center;
+  //padding-left: 1em;
+  border-radius: 4px;
+  //padding-right: 16px;
+  justify-content: center;
+  background-color: rgb(94, 93, 156);
+  font-size: 1em;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(130, 129, 180);
+  }
+}

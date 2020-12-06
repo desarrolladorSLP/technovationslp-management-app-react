@@ -1,0 +1,13 @@
+.navbar-container {
+  background-color: rgb(94, 93, 156);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  .navbar-list {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    overflow: hidden;
+    height: 4em;
+  }
+}
